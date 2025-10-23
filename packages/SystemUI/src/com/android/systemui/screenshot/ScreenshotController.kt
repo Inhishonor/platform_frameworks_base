@@ -22,6 +22,7 @@ import android.content.Intent
 import android.content.IntentFilter
 import android.content.pm.ActivityInfo
 import android.content.res.Configuration
+import android.ext.settings.ExtSettings;
 import android.graphics.Bitmap
 import android.graphics.Insets
 import android.graphics.Rect
@@ -393,7 +394,7 @@ internal constructor(
             0,
             response.packageName,
         )
-        val newScreenshot = imageCapture.captureDisplay(display.displayId, null)
+        val newScreenshot = imageCapture.captureDisplay(display.displayId, null, ExtSettings.ALLOW_SCREENSHOT_SECURE.get(context))
         if (newScreenshot == null) {
             Log.e(TAG, "Failed to capture current screenshot for scroll transition!")
             return

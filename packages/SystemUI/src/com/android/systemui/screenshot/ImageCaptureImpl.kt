@@ -37,7 +37,7 @@ open class ImageCaptureImpl @Inject constructor(
     @Background private val bgContext: CoroutineDispatcher
 ) : ImageCapture {
 
-    override fun captureDisplay(displayId: Int, crop: Rect?): Bitmap? {
+    override fun captureDisplay(displayId: Int, crop: Rect?, captureSecureLayers: Boolean): Bitmap? {
         val captureArgs = CaptureArgs.Builder()
             .setSourceCrop(crop)
             .build()

@@ -26,7 +26,7 @@ internal class FakeImageCapture : ImageCapture {
 
     var image: Bitmap? = null
 
-    override fun captureDisplay(displayId: Int, crop: Rect?): Bitmap? {
+    override fun captureDisplay(displayId: Int, crop: Rect?, captureSecureLayers: Boolean): Bitmap? {
         requestedDisplayId = displayId
         requestedDisplayCrop = crop
         return image
